@@ -15,7 +15,7 @@ if (body) {
 
     // 3. 【关键】移除指向恶意域名的跳转链接
     // 源码中这些域名出现在 <a href="..."> 中
-    const badDomains = "jyrdgdf2fb1bfv31dvd|xbbbing|vlrubju|wordsj";
+    const badDomains = "jyrdgdf2fb1bfv31dvd|vlrubju|wordsj";
     const regexJump = new RegExp(`<a href="[^"]*(${badDomains})[^"]*"[\\s\\S]*?<\\/a>`, "g");
     body = body.replace(regexJump, "");
     
