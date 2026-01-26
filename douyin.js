@@ -3,6 +3,10 @@
 */
 let body = $response.body;
 
+// 在返回的 JSON 文本中，强制修改画质参数
+body = body.replace(/"ratio":\s*"\d+p"/g, '"ratio":"1080p"'); 
+body = body.replace(/"quality_type":\s*\d+/g, '"quality_type":1');
+
 if (body) {
     // 1. 强制将所有水印标记改为 0
     body = body.replace(/"watermark":1/g, '"watermark":0');
